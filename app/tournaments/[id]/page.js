@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import getTourneyDetails from "@/lib/getTourneyDetails";
-import getTourneyLeaderboard from "@/lib/getTourneyLeaderboard";
-import Leaderboard from "@/app/components/Leaderboard";
+import getTourneyDetails from "@/lib/api/getTourneyDetails";
+import getTourneyLeaderboard from "@/lib/api/getTourneyLeaderboard";
+import Leaderboard from "@/components/Leaderboard";
 // import getAllTournaments from "@/lib/getAllTournaments";
 
 export async function generateMetadata({ params }) {

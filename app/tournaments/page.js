@@ -1,4 +1,4 @@
-import getAllTournaments from "@/lib/getAllTournaments";
+import getAllTournaments from "@/lib/api/getAllTournaments";
 import Link from "next/link";
 
 export default async function Tournaments() {
