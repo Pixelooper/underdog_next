@@ -2,7 +2,7 @@ export const exploreGames = [
   {
     id: 'pubg',
     imgUrl: '/pubg.png',
-    title: 'PUBG MOBILE',
+    title: 'PUBG',
     subTitle: 'Underdog allow gamers all over the world, with all skills to compete on their favourite game and make money.',
   },
   {

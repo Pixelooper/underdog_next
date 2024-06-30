@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import getTourneyDetails from "@/lib/api/getTourneyDetails";
+import getAllTournaments from "@/lib/api/getAllTournaments";
 import getTourneyLeaderboard from "@/lib/api/getTourneyLeaderboard";
 import Leaderboard from "@/components/Leaderboard";
-// import getAllTournaments from "@/lib/getAllTournaments";
 
 export async function generateMetadata({ params }) {
     const { id } = params;
@@ -24,8 +24,8 @@ export default async function TournamentDetails({ params }) {
 
     return (
         <div className="mt-6">
-            <h2 className="text-blue-500">{tournament.data.tournamentName}</h2>
-            <p className="mt-3">Tournament Name: {tournament.data.category}</p>
+            <h2 className="text-blue-500">{tournament?.data?.tournamentName}</h2>
+            <p className="mt-3">Tournament Name: {tournament?.data?.category}</p>
             <hr />
             <Suspense fallback="<h1>Loading Leaderboard...</h1>">
                 <Leaderboard promise={leaderboardPromise} />
@@ -34,10 +34,10 @@ export default async function TournamentDetails({ params }) {
     );
 }
 
-// export async function generateStaticParams() {
-//     const tournaments = await getAllTournaments();
+export async function generateStaticParams() {
+    const tournaments = await getAllTournaments();
 
-//     return tournaments.map((tournament) => ({
-//         id: tournament._id.toString(),
-//     }));
-// }
+    return tournaments?.data?.map((tournament) => ({
+        id: tournament?._id?.toString(),
+    }));
+}
